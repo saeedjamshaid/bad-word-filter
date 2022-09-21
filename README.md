@@ -1,1 +1,0 @@
-# bad-word-filter
