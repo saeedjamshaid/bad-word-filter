@@ -6,3 +6,27 @@
   align-items: center;
   justify-content: center;
 }
+
+label {
+  font-size: 2rem;
+}
+
+input {
+  display: block;
+  font-size: 2rem;
+}
+
+input.checkbox {
+  display: inline;
+  height: 30px;
+  width: 30px;
+}
+
+.submit-button {
+  margin-top: 20px;
+}
+
+select {
+  display: block;
+  font-size: 2rem;
+}

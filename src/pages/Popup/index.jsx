@@ -18,9 +18,7 @@ notify.addEventListener( 'click', () => {
     chrome.tabs.query(query, callback);
 } );
 
-
 function callback(tabs) {
     var currentTab = tabs[0]; 
     apiClient.filterPage(currentTab.id, currentTab.url, true);
-    //chrome.runtime.sendMessage({currentTab: currentTab});
   }

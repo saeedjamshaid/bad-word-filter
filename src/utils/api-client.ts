@@ -5,6 +5,16 @@ import {
   Environment,
 } from 'neutrino-apilib';
 
+var userId :string;
+var apiKey :string;
+var catalog :string;
+
+chrome.storage.sync.get(['userId', 'apiKey', 'catalog'], function(data) {    
+  userId = data.userId
+  apiKey = data.apiKey
+  catalog = data.catalog
+});
+
 export class ApiClient {
   static instance?: ApiClient;
 
@@ -24,14 +34,15 @@ export class ApiClient {
     active: boolean
   ) {
     if (url != undefined && tabId != undefined) {
+      console.log('userId: ' + userId, 'apiKey: ' + apiKey + ', catalog: ' + catalog)
+      
       const client = new Client({
-        userId: 'saeed.jamshaid',
-        apiKey: 'Db90F9yoZZMpQeGiilSADOcp52o2P9GYwHgxJqxtWLnjvasw',
+        userId: userId,
+        apiKey: apiKey,
         environment: Environment.Production,
       });
 
       const dataToolsController = new DataToolsController(client);
-      const catalog = 'strict';
 
       dataToolsController
         .badWordFilter(url, '*', catalog)
