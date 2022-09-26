@@ -1,5 +1,7 @@
 # bad-word-filter
 
+Censor profanity from any webpage using this extension.
+
 To compile the chrome extension, run the following commands.
 ```
 npm install
